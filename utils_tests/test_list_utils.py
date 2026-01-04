@@ -41,6 +41,21 @@ class TestChunkList:
         """Test chunk size equal to list size."""
         result = chunk_list([1, 2, 3], 3)
         assert result == [[1, 2, 3]]
+    
+    def test_chunk_size_zero(self):
+        """Test chunking with chunk size of zero."""
+        with pytest.raises(ValueError):
+            chunk_list([1, 2, 3], 0)
+    
+    def test_chunk_size_negative(self):
+        """Test chunking with negative chunk size."""
+        with pytest.raises(ValueError):
+            chunk_list([1, 2, 3], -1)
+    
+    def test_chunk_size_float(self):
+        """Test chunking with float chunk size."""
+        with pytest.raises(TypeError):
+            chunk_list([1, 2, 3], 2.5)
 
 
 class TestFlattenList:

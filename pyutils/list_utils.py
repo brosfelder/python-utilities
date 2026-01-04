@@ -20,8 +20,9 @@ def chunk_list(data: List[T], chunk_size: int) -> List[List[T]]:
         >>> chunk_list([1, 2, 3, 4, 5], 2)
         [[1, 2], [3, 4], [5]]
     """
-    
-    raise NotImplementedError("chunk_list not yet implemented")
+    if chunk_size <= 0:
+        raise ValueError("chunk_size parameter must be positive")
+    return [data[i:i+chunk_size] for i in range(0, len(data), chunk_size)]
 
 
 def flatten_list(nested_list: List[Any]) -> List[Any]:
