@@ -20,7 +20,7 @@ def chunk_list(data: List[T], chunk_size: int) -> List[List[T]]:
         >>> chunk_list([1, 2, 3, 4, 5], 2)
         [[1, 2], [3, 4], [5]]
     """
-    # TODO: Implement chunk_list logic
+    
     raise NotImplementedError("chunk_list not yet implemented")
 
 
@@ -38,9 +38,13 @@ def flatten_list(nested_list: List[Any]) -> List[Any]:
         >>> flatten_list([[1, 2], [3, 4], [5]])
         [1, 2, 3, 4, 5]
     """
-    # TODO: Implement flatten_list logic
-    raise NotImplementedError("flatten_list not yet implemented")
-
+    result = []
+    for item in nested_list:
+        if isinstance(item, list):
+            result.extend(flatten_list(item))
+        else:
+            result.append(item)
+    return result
 
 def remove_duplicates(data: List[T], preserve_order: bool = True) -> List[T]:
     """
