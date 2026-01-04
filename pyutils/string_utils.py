@@ -17,7 +17,8 @@ def slugify(text: str, separator: str = "-") -> str:
         'hello-world'
     """
     # TODO: Implement slugify logic
-    raise NotImplementedError("slugify not yet implemented")
+    # raise NotImplementedError("slugify not yet implemented")
+    return text.lower().strip().replace('!','').replace('?','').replace('.','').replace(' ', '-')
 
 
 def truncate(text: str, max_length: int, suffix: str = "...") -> str:
@@ -36,8 +37,10 @@ def truncate(text: str, max_length: int, suffix: str = "...") -> str:
         >>> truncate("This is a long text", 10)
         'This is...'
     """
-    # TODO: Implement truncate logic
-    raise NotImplementedError("truncate not yet implemented")
+    if(len(text) <= max_length):
+        return text
+    else:
+        return text[:max_length - len(suffix)] + suffix
 
 def camel_to_snake(text: str) -> str:
     """
