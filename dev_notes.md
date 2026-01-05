@@ -8,7 +8,7 @@
 
 ### Ideas & Thoughts
 
-- Completed the remove_duplicate function
+- Completed the remove_duplicates function
     - Can make a couple improvements
     - This is an inefficient solution O(n^2)
     - Also forgot to implement the sorting 
