@@ -62,5 +62,7 @@ def remove_duplicates(data: List[T], preserve_order: bool = True) -> List[T]:
         >>> remove_duplicates([1, 2, 2, 3, 1])
         [1, 2, 3]
     """
-    # TODO: Implement remove_duplicates logic
-    raise NotImplementedError("remove_duplicates not yet implemented")
+    if preserve_order:
+        return list(dict.fromkeys(data))
+    else:
+        return list(set(data))
