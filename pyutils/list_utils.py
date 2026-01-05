@@ -62,5 +62,8 @@ def remove_duplicates(data: List[T], preserve_order: bool = True) -> List[T]:
         >>> remove_duplicates([1, 2, 2, 3, 1])
         [1, 2, 3]
     """
-    # TODO: Implement remove_duplicates logic
-    raise NotImplementedError("remove_duplicates not yet implemented")
+    result = []
+    for item in data:
+        if item not in result:
+            result.append(item)
+    return result
