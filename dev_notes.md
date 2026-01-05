@@ -11,7 +11,7 @@
 - Completed the remove_duplicates function
     - Can make a couple improvements
     - This is an inefficient solution O(n^2)
-    - Also forgot to implement the sorting 
+    - Also need to finalize the preserve_order behavior (no sorting, only duplicate removal)
 
 
 ### Questions
