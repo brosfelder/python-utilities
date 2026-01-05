@@ -56,5 +56,10 @@ def camel_to_snake(text: str) -> str:
         >>> camel_to_snake("myVariableName")
         'my_variable_name'
     """
-    # TODO: Implement camel_to_snake logic
-    raise NotImplementedError("camel_to_snake not yet implemented")
+    result = ''
+    for i, c in enumerate(text):
+        if c.isupper() and i > 0:
+            if not text[i-1].isupper() or (i + 1 < len(text) and text[i+1].islower()):
+                result += '_'
+        result += c
+    return result.lower()
